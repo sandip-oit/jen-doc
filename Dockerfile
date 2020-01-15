@@ -1,9 +1,9 @@
-version: '3'
-services:
-    php-apache:
-        image: php:7.2.1-apache
-        ports:
-            - 80:80
-        volumes:
-            - ./www:/var/www/html:z
-       
+FROM ubuntu
+
+RUN apt update -y
+RUN apt install apache2 -y
+
+COPY ./www /var/www/html
+
+EXPOSE 80
+CMD apachectl -D FOREGROUND

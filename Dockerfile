@@ -5,7 +5,7 @@ services:
         ports:
             - 80:80
         volumes:
-            - www:/var/www/html:z
+            - ./www:/var/www/html:z
         links:
             - 'mariadb'
 
